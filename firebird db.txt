@@ -1,0 +1,36 @@
+
+KOMUT SATIRINDAN Firebird veritabanýna eriþilmesi;
+--------------------------------------------------
+
+1-"Firebird isql Tool" programý ile komut satýrýndan FDB uzantýlý dosyalara SYSDBA kullanýcýsý ve 'masterkey' parolasý ile eriþildi.
+
+CON>connect <database>  //Connect "E:\TAKIP.FDB"
+SQL>user SYSDBA password 'masterkey';
+SQL>show tables;
+
+
+tabloyu dýþarý export etmek için
+
+SQL>output "yol+dosya_adý"  //output "E:\KASA.txt"
+SQL>select * from KASA;
+SQL>output;
+
+tablonun yapýsýný görmek için;
+SQL>show table "tablo_Adý";
+
+
+
+VERÝTABANI YÖNETÝM PROGRAMI ÝLE Firebird veritabaýna eriþim;
+------------------------------------------------------------
+
+1-Firebird 2.0 programý, BDE(Borland Database Engine) ve IBOConsole programlarý kurulacak.
+2-IBOConsole programýný çalýþtýr ve menüden Server-->Register komutuna týkla.
+3-username:SYSDBA, password:masterkey girilecek (burada parola masterkey...default password :)
+4-LocalServer kullanýlarak Database-->Register yapýlacak.
+5-3-username:SYSDBA password:masterkey, Default Character Set:Win1254
+6-Tools-->Interactive SQL komutu ile Query(Sorgulama) penceresi açýlýr.
+7-örneðin CARI tablosundaki verileri görmek için;
+
+SELECT * FROM CARI
+
+yazýlýr ve Ctrl+E tuþu ile sorgu çalýþtýlýr.Query menüsünden "Save Output" ve format(txt,xls) seçilir.
