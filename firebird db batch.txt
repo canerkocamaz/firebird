@@ -1,0 +1,47 @@
+        -t(erminator) <term>    command terminator (set term)
+        -u(ser) <user>          user name
+        -x                      extract metadata
+        -z                      show program and server version
+
+E:\deneme\01022011.ZIP\ZIP Volume>>for %i in (*.fdb) do (call cmd /k "C:\Program Files\Firebird\Firebird_2_0\bin\isql.exe" -u sysdba -p masterkey %i -i SIRKET.sql -s 3 -o SIRKET.txt)
+'%i' iç ya da dış komut, çalıştırılabilir
+program ya da toplu iş dosyası olarak tanınmıyor.
+
+E:\deneme\01022011.ZIP\ZIP Volume>for %i in (*.fdb) do (call cmd /k "C:\Program Files\Firebird\Firebird_2_0\bin\isql.exe" -u sysdba -p masterkey %i -i SIRKET.sql -s 3 -o SIRKET.txt)
+
+E:\deneme\01022011.ZIP\ZIP Volume>(call cmd /k "C:\Program Files\Firebird\Firebird_2_0\bin\isql.exe" -u sysdba -p masterkey TAKIP.FDB -i SIRKET.sql -s 3 -o SIRKET.txt )
+Expected end of statement, encountered EOF
+
+E:\deneme\01022011.ZIP\ZIP Volume>for /f %i in (*.fdb) do call cmd /k "C:\Program Files\Firebird\Firebird_2_0\bin\isql.exe" -u sysdba -p masterkey %i -i SIRKET.sql -s 3 -o deneme.txt
+Sistem *.fdb dosyasını bulamıyor.
+
+E:\deneme\01022011.ZIP\ZIP Volume>,
+E:\deneme\01022011.ZIP\ZIP Volume>for %i in (*.fdb) do (call cmd /k "C:\Program Files\Firebird\Firebird_2_0\bin\isql.exe" -u sysdba -p masterkey %i -i SIRKET.sql -s 3 -o %i.txt)
+
+E:\deneme\01022011.ZIP\ZIP Volume>(call cmd /k "C:\Program Files\Firebird\Firebird_2_0\bin\isql.exe" -u sysdba -p masterkey TAKIP.FDB -i SIRKET.sql -s 3 -o TAKIP.FDB.txt )
+Expected end of statement, encountered EOF
+
+E:\deneme\01022011.ZIP\ZIP Volume>>for %i in (*.fdb) do echo %i
+'%i' iç ya da dış komut, çalıştırılabilir
+program ya da toplu iş dosyası olarak tanınmıyor.
+
+E:\deneme\01022011.ZIP\ZIP Volume>for %i in (*.fdb) do echo %i
+
+E:\deneme\01022011.ZIP\ZIP Volume>echo TAKIP.FDB
+TAKIP.FDB
+
+E:\deneme\01022011.ZIP\ZIP Volume>for %i in (*.fdb) do call cmd /k "C:\Program Files\Firebird\Firebird_2_0\bin\isql.exe" -u sysdba -p masterkey %i -i SIRKET.sql -s 3 -o %i.txt
+
+E:\deneme\01022011.ZIP\ZIP Volume>call cmd /k "C:\Program Files\Firebird\Firebird_2_0\bin\isql.exe" -u sysdba -p masterkey TAKIP.FDB -i SIRKET.sql -s 3 -o TAKIP.FDB.txt
+Expected end of statement, encountered EOF
+
+E:\deneme\01022011.ZIP\ZIP Volume>call cmd /k "C:\Program Files\Firebird\Firebird_2_0\bin\isql.exe" -u sysdba -p masterkey TAKIP.FDB -i SIRKET.sql -s 3 -o TAKIP.FDB.txt
+Expected end of statement, encountered EOF
+
+E:\deneme\01022011.ZIP\ZIP Volume>for %i in (*.fdb) do call cmd /k "C:\Program Files\Firebird\Firebird_2_0\bin\isql.exe" -u sysdba -p masterkey "%i" -i SIRKET.sql -s 3 -o "%i.txt"
+
+E:\deneme\01022011.ZIP\ZIP Volume>call cmd /k "C:\Program Files\Firebird\Firebird_2_0\bin\isql.exe" -u sysdba -p masterkey "TAKIP.FDB" -i SIRKET.sql -s 3 -o "TAKIP.FDB.txt"
+'C:\Program' iç ya da dış komut, çalıştırılabilir
+program ya da toplu iş dosyası olarak tanınmıyor.
+
+E:\deneme\01022011.ZIP\ZIP Volume>
